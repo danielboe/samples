@@ -44,7 +44,7 @@ namespace BlinkyCpp
         
         Windows::UI::Xaml::DispatcherTimer ^timer_;
 		Windows::Devices::Gpio::GpioPinValue pinValue_ = Windows::Devices::Gpio::GpioPinValue::High;
-        const int LED_PIN = 5;
+        const int LED_PIN = 47; //pin47 ist led PIN
         Windows::Devices::Gpio::GpioPin ^pin_;
         Windows::UI::Xaml::Media::SolidColorBrush ^redBrush_ = ref new Windows::UI::Xaml::Media::SolidColorBrush(Windows::UI::Colors::Red);
         Windows::UI::Xaml::Media::SolidColorBrush ^grayBrush_ = ref new Windows::UI::Xaml::Media::SolidColorBrush(Windows::UI::Colors::LightGray);
