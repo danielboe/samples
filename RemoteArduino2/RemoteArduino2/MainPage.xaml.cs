@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Diagnostics;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -73,16 +75,16 @@ namespace RemoteBlinky
                 //SerialConfig.8N1 is the default config for Arduino devices over USB
                 usb.begin( 57600, SerialConfig.SERIAL_8N1 );
             }
-
         }
 
         private void OnConnectionEstablished()
         {
+            Debug.Write("connected");
             //enable the buttons on the UI thread!
-            var action = Dispatcher.RunAsync( Windows.UI.Core.CoreDispatcherPriority.Normal, new Windows.UI.Core.DispatchedHandler( () => {
-                OnButton.IsEnabled = true;
-                OffButton.IsEnabled = true;
-            }));
+             var action = Dispatcher.RunAsync( Windows.UI.Core.CoreDispatcherPriority.Normal, new Windows.UI.Core.DispatchedHandler( () => {
+                 OnButton.IsEnabled = true;
+                 OffButton.IsEnabled = true;
+             }));
         }
 
         private void OnButton_Click( object sender, RoutedEventArgs e )
