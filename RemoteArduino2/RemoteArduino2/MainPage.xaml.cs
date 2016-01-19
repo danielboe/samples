@@ -95,7 +95,7 @@ namespace RemoteBlinky
 
         private void OffButton_Click( object sender, RoutedEventArgs e )
         {
-            //turn the LED connected to pin 5 OFF
+            //turn the LED connected to pin 5 OFFF
             arduino.digitalWrite( 13, PinState.LOW );
         }
     }
